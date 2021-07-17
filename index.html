@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="blocks_banner">
+            <div class="blocks"></div>
+        </div>
+        <div class="sides">
+            <div class="side" id="side1">
+                <img src="https://images6.alphacoders.com/902/thumb-1920-902379.jpg">
+            </div>
+            <div class="side" id="side2">
+                <img src="https://images6.alphacoders.com/902/thumb-1920-902379.jpg">
+            </div>
+            <div class="content">
+                <h2>Spiderman</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, ullam doloremque explicabo et,
+                    repellat
+                    nihil earum sit voluptas illum exercitationem eligendi animi quo asperiores, possimus nulla debitis
+                    accusantium. Debitis alias voluptas inventore reiciendis libero, saepe odit aspernatur et nesciunt
+                    similique illum consequatur reprehenderit ex nemo tempora quasi, ipsum quisquam at aperiam pariatur!
+                    Inventore aperiam totam velit, eos accusamus tempora nemo error vitae sunt facere corrupti laborum,
+                    qui
+                    et. Amet sed maiores nemo reprehenderit dolores dicta veniam ipsam impedit facilis porro? Fuga,
+                    laboriosam quo ipsam sit at voluptas voluptatem harum veniam cum nulla, in porro esse, magni
+                    exercitationem. Minima harum aliquam autem ducimus numquam error non explicabo inventore natus, nisi
+                    voluptatem odit veniam consequatur veritatis sed illo nulla voluptatibus quos asperiores ipsam, qui
+                    officia saepe? Non molestias itaque consequuntur tempora, sunt cupiditate, hic eos dignissimos,
+                    consequatur obcaecati nesciunt dolorum ratione delectus ipsam odit ad excepturi unde explicabo
+                    voluptatem maiores optio amet!</p>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    const block_banner = document.getElementsByClassName('blocks_banner')[0];
+    const blocks = document.getElementsByClassName('blocks');
+    var side1 = document.getElementById('side1');
+    var side2 = document.getElementById('side2');
+    var sides = document.getElementsByClassName('sides')[0];
+    var content = document.getElementsByClassName('content')[0];
+
+    for (i = 0; i < 500; i++) {
+        block_banner.innerHTML += '<div class="blocks"></div>';
+        const duration = Math.random() * 3;
+        blocks[i].style.animationDuration = 2 + duration + 's';
+        blocks[i].style.animationDelay = duration + 's';
+    }
+    sides.style.display = 'none';
+    content.style.display = 'none';
+    
+    setTimeout(() => {
+        sides.style.display = '';
+        content.style.display = '';
+        block_banner.style.display = 'none';
+    }, 8000);
+
+    window.addEventListener('scroll', () => {
+        side1.style.left = -pageYOffset * 6 + 'px';
+        side2.style.left = pageYOffset * 5 + 'px';
+    });
+</script>
+
+</html>
